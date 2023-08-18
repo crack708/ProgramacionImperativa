@@ -1,0 +1,10 @@
+let nombre = "Juan";
+let apellido = "Martinez";
+let diaNacimiento = 23;
+let mesNacimiento = 7;
+let anioNacimiento = 2002;
+let numeroDocumento = 32123;
+let vive = true;
+const prompt = require("prompt-sync")({ sigint: true });
+let nombre1 = prompt("Ingrese su nombre: ");
+console.log(`Hola ${nombre1}!!!`);
