@@ -1,3 +1,11 @@
+/* Integrantes del equipo 
+
+1.- Jessica Martínez Alee
+2.- Ana Cecilia Toribio Arrieta
+3.- Alberto Soriano Vasquez
+
+*/
+
 
 /* 
 Punto 1: Variables, Condicionales y Bucles
@@ -135,24 +143,23 @@ console.log(calculaPromedio(estudiantes[0]))
 
 
 function aprobacion(estudiantes){
-  // let aprobado = false;
-  let promedio = calculaPromedio(estudiantes.notas);
-  
+   let aprobado = false;
+  let promedio = calculaPromedio(estudiantes);
   if (promedio > 70){
     aprobado = true;
   }
   return aprobado
 }
-
 console.log(aprobacion(estudiantes[0]));
-
-
 
 // Calcular si los estudiantes aprobaron o no
 
 
 // Imprimir estado de aprobación de los estudiantes
-
+console.log(aprobacion(estudiantes[0]));
+console.log(aprobacion(estudiantes[1]));
+console.log(aprobacion(estudiantes[2]));
+console.log(aprobacion(estudiantes[3]));
 
 
 /* 
@@ -162,35 +169,57 @@ Punto 3: Arreglos y Bucles
 */
 
 //CODIGO
-
-
-
-
-
-
+let numeros = [3,5,6,2,8,10,12];
+let sum=0;
+let j=0;
+while (numeros[j]) {
+    if (numeros[j]%2==0){
+     sum +=numeros[j];}
+  j++;
+}
+console.log("aquí", sum);
 
 /* 
 Punto 4: Bucles y Arreglos
 10. Crea una función que tome un arreglo de números y devuelva el producto de los números impares.
-
 Respuesta y Explicación:
-
 */
 
 //CODIGO
 
-
-
-
-
+function multiplicacionImpares(array){
+  let producto=1;
+  for (i=0; i < array.length; i++){
+    if (array[i]%2!=0){
+      producto = array[i] * producto;
+    }
+  }
+  return producto;
+}
+console.log(multiplicacionImpares(numeros));
 
 /* 
 Punto 5: Objetos y Condicionales
 11. Crea un objeto vehiculo con propiedades como marca, modelo, anio y precio.
-
 Agrega un método al objeto que calcule el impuesto a pagar según el año del vehículo. Si el año es anterior a 2010, el impuesto es del 10% del precio; si es posterior o igual a 2010, el impuesto es del 5%.
-
 */
 
 //CODIGO
 
+let vehiculo = {
+  marca: "Volkswagen",
+  modelo: "jetta",
+  anio: 2020,
+  precio: 2500,
+  impuesto: function(){
+    let impuestoTotal;
+    if(this.anio < 2010){
+      impuestoTotal = (this.precio * 10)/100;
+    }
+    else{
+      impuestoTotal = (this.precio * 5)/100;
+    }
+    return impuestoTotal;
+  }
+};
+console.log(vehiculo.impuesto());
